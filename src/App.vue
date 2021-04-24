@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="logos">
-      <img class="logo-hc" src="./assets/highcharts_logo.png" alt="Highcharts Logo">
-      <img class="logo-vue" src="./assets/vue_logo.png" alt="Vue Logo">
+      <img class="logo-hc" src="./assets/highcharts_logo.png" alt="Highcharts Logo" />
+      <img class="logo-vue" src="./assets/vue_logo.png" alt="Vue Logo" />
     </div>
     <div class="button-grp">
       <button @click="select('chart')" :class="{btnActive: selected === 'chart'}">Chart</button>

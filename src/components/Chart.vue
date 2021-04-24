@@ -3,10 +3,8 @@
     <div class="row">
       <highcharts class="chart" :options="chartOptions" :updateArgs="updateArgs"></highcharts>
       <div>
-        <h3>Flexibly change the value of each point:</h3>
-        <h4>Points:</h4>
         <form class="row points">
-          <div v-for="index in 8" :key="index">
+          <div v-for="index in 5" :key="index">
             <p>{{index}}</p>
             <input v-model.number="points[index-1]" type="number" class="numberInput">
           </div>
@@ -20,22 +18,27 @@
 export default {
   data () {
     return {
-      title: '',
-      points: [10, 0, 8, 2, 6, 4, 5, 5],
-      chartType: 'Spline',
+      points: [1, 2, 3, 4, 5],
+      chartType: 'bar',
       seriesColor: '#6fcd98',
       colorInputIsSupported: null,
       animationDuration: 1000,
       updateArgs: [true, true, {duration: 1000}],
       chartOptions: {
         chart: {
-          type: 'spline'
+          type: 'bar'
         },
         title: {
-          text: 'Sin chart'
+          text: '各国GDP数值'
+        },
+        xAxis: {
+          categories: ['非洲', '美洲', '亚洲', '欧洲', '大洋洲'],
+          title: {
+            text: null
+          }
         },
         series: [{
-          data: [10, 0, 8, 2, 6, 4, 5, 5],
+          data: [1, 2, 3, 4, 5],
           color: '#6fcd98'
         }]
       }
